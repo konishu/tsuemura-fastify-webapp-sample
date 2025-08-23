@@ -19,6 +19,12 @@ jobs:
 
       - name: Install Railway
         run: bash <(curl -fsSL cli.new)
+      
+      - name: Login to Railway
+        run: railway login --token ${{ secrets.RAILWAY_TOKEN }}
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
 
       - name: Link to the environment
         run: railway environment staging
