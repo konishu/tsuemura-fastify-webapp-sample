@@ -5,6 +5,7 @@ setHeadlessWhen(process.env.HEADLESS);
 
 // enable all common plugins https://github.com/codeceptjs/configure#setcommonplugins
 setCommonPlugins();
+require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
 
 /** @type {CodeceptJS.MainConfig} */
 exports.config = {
@@ -12,7 +13,7 @@ exports.config = {
   output: './output',
   helpers: {
     Playwright: {
-      url: 'http://localhost:8080',
+      url: process.env.BASE_URL, // process.env.BASE_URL に環境変数が入っている
       show: true,
       browser: 'chromium'
     }
