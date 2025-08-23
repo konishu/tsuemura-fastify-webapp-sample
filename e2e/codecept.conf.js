@@ -5,7 +5,7 @@ setHeadlessWhen(process.env.HEADLESS);
 
 // enable all common plugins https://github.com/codeceptjs/configure#setcommonplugins
 setCommonPlugins();
-require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
+require('dotenv').config(); // dotenvを読み込む
 
 /** @type {CodeceptJS.MainConfig} */
 exports.config = {
