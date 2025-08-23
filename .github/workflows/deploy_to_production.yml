@@ -24,18 +24,11 @@ jobs:
         run: bash <(curl -fsSL cli.new)
 
       - name: Link to the environment
-        run: railway environment stating
+        run: railway environment production
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_STAGING_TOKEN }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_PRODUCTION_TOKEN }}
 
       - name: Deploy
-        run: railway up --ci --service fasify-webapp-sample
+        run: railway up --ci --service fastify-webapp-sample
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_STAGING_TOKEN }}
-#   push:
-#     branches:
-#       - main
-
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_PRODUCTION_TOKEN }}
