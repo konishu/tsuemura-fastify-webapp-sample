@@ -19,7 +19,8 @@ exports.config = {
     }
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
+    utils: './utils'
   },
   translation: 'en-US',
   vocabularies: ['./vocabularies.json'],
