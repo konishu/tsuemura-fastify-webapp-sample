@@ -3,10 +3,10 @@ SuiteOf('注文プロセスのテスト');
 Scenario('ログインし、お弁当を注文し、お弁当を受けとる', ({ I }) => {
     I.amOnPage('/');
     I.click('ログインする');
-    I.fillField("ユーザー名", "user1_")
+    I.fillField("ユーザー名", "user1")
     I.fillField("パスワード", "super-strong-passphrase")
     I.click("ログイン")
-    I.see("User1 さん")
+    I.see("user1 さん")
 
     // カートに商品を入れる
     I.fillField("カートに入れる数量", "1")
